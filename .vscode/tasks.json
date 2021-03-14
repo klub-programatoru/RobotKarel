@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++.exe build active file",
+            //Pay attention to change to your own MinGW directory
+            "command": "${workspaceFolder}\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "${file}", "${workspaceFolder}\\Karel\\graphics.cpp", "${workspaceFolder}\\Karel\\game.cpp", "${workspaceFolder}\\Karel\\wall.cpp", "${workspaceFolder}\\Karel\\background.cpp", "${workspaceFolder}\\Karel\\karel.cpp", "${workspaceFolder}\\Karel\\finish.cpp","${workspaceFolder}\\Karel\\obdelnik.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-I${workspaceFolder}\\mingw64/include",
+                "-L${workspaceFolder}\\mingw64/lib",
+                "-lmingw32",
+                "-lSDL2main",
+                "-lSDL2",
+                "-mwindows",
+                "-mconsole",
+                "-lSDL2_image",
+                "-L${workspaceFolder}\\mingw64\\x86_64-w64-mingw32\\bin"
+                
+            ],
+            "options": {
+                //Pay attention to change to your own MinGW directory
+                "cwd": "${workspaceFolder}\\mingw64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

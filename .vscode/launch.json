@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "g++.exe build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\Karel/main.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "PATH", 
+                    "value": "%PATH%;${workspaceFolder}\\mingw64\\bin"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            //Pay attention to change to your own MinGW directory
+            "miDebuggerPath": "${workspaceFolder}\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            // "preLaunchTask": "g++.exe build active file",
+            // "logging": {
+            //     "engineLogging": false
+            // }
+        }
+    ]
+}
